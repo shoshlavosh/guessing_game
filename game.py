@@ -10,7 +10,7 @@ guess = ""
 while answer != guess:
     guess = input(f"Choose a number between 1 and 100 >")
 
-    if guess is not guess.isnumeric():
+    if not guess.isnumeric():
         print("Try again! Guess is not a valid number.")
         guess = input("Please choose a number between 1 and 100. > ")
     
