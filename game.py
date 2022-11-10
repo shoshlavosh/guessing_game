@@ -8,12 +8,18 @@ print(f"Hi, {name}! Let's play a guessing game")
 
 guess = ""
 while answer != guess:
-    guess = str.lower(input(f"Choose a number between 1 and 100>"))
+    guess = input(f"Choose a number between 1 and 100 >")
 
-    #WORK ON THIS :)
-    # while guess is not guess.isnumeric():
-    #     guess = str.lower(input(f"Try again! Guess is not a valid number."))
+    if guess is not guess.isnumeric():
+        print("Try again! Guess is not a valid number.")
+        guess = input("Please choose a number between 1 and 100. > ")
     
+    if int(guess) > 100:
+        guess = input("Please choose a number between 1 and 100. >")
+    
+    if int(guess) < 1:
+        guess = input("Please choose a number between 1 and 100. > ")
+
     guesses += 1
 
     if int(guess)<answer:
